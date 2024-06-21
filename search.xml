@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>恢复Win11右键菜单完整显示</title>
+      <title>恢复Windows 11 右键菜单完整显示</title>
       <link href="/windows/windows-right-click-menu/"/>
       <url>/windows/windows-right-click-menu/</url>
       
-        <content type="html"><![CDATA[<h1 id="1-打开命令提示符，输入："><a href="#1-打开命令提示符，输入：" class="headerlink" title="1.打开命令提示符，输入："></a>1.打开命令提示符，输入：</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.exe add “HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32” /f /ve</span><br></pre></td></tr></table></figure><p><img src="/windows/windows-right-click-menu/image-20240621090222405.png" alt="image-20240621090222405"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="1-打开命令提示符，输入："><a href="#1-打开命令提示符，输入：" class="headerlink" title="1.打开命令提示符，输入："></a>1.打开命令提示符，输入：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg.exe add “HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32” /f /ve</span><br></pre></td></tr></table></figure><p><img src="/windows/windows-right-click-menu/image-20240621090935399.png" alt="image-20240621090935399"></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /f /im explorer.exe &amp; start explorer.exe</span><br></pre></td></tr></table></figure><p><img src="/windows/windows-right-click-menu/image-20240621090222405.png" alt="image-20240621090222405"></p>]]></content>
       
       
       <categories>
