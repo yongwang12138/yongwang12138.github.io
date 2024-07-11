@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>视频裁剪</title>
+      <link href="/ffmpeg/video-fliter/"/>
+      <url>/ffmpeg/video-fliter/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i source.mkv -vf crop=1920:800:0:140,scale=-2:480 -c:v libx265 -c:v libmp3lame -y ok.mkv</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> ffmpeg </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ffmpeg </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>列表循环布局-动画实现</title>
+      <link href="/kanzi/loop-layout/"/>
+      <url>/kanzi/loop-layout/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> kanzi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> kanzi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>extern</title>
       <link href="/cplusplus/extern/"/>
       <url>/cplusplus/extern/</url>
