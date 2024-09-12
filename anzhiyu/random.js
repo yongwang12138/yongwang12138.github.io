@@ -1,0 +1,3 @@
+var posts=["Qt/QGraphicsView/","Qt/Qt-Android/","Qt/Qt-VS/","Qt/Qt-install/","Qt/opengl-config/","blog/Hexo-config/","blog/blog-primer/","design-patterns/Singleton/","cplusplus/extern/","cmake/CMake-primer/","ffmpeg/video-fliter/","kanzi/alpha/","git/git-base/","kanzi/loop-layout/","kanzi/multiple-projects/","kanzi/openGL/","linux/gcc/","flutter/flutter-config/","linux/ubuntu-config/","flutter/dart-primer/","flutter/flutter-primer/","flutter/get-cli/","windows/vscode-config/","windows/unable-cmd/","windows/windows-right-click-menu/"];function toRandomPost(){
+    pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
+  };
