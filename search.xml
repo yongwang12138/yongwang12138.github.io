@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>vscode-config</title>
+      <title>vscode配置</title>
       <link href="/windows/vscode-config/"/>
       <url>/windows/vscode-config/</url>
       
@@ -29,7 +29,7 @@
     
     
     <entry>
-      <title>CMake-primer</title>
+      <title>CMake教程</title>
       <link href="/cmake/CMake-primer/"/>
       <url>/cmake/CMake-primer/</url>
       
@@ -54,7 +54,7 @@
     
     
     <entry>
-      <title>opengl-config</title>
+      <title>Qt使用OpenGL</title>
       <link href="/Qt/opengl-config/"/>
       <url>/Qt/opengl-config/</url>
       
