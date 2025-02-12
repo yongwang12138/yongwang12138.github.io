@@ -1,0 +1,3 @@
+var posts=["cplusplus/extern/","cmake/cmake-primer/","cplusplus/singleton/","ffmpeg/video-fliter/","flutter/dart-primer/","flutter/flutter-config/","flutter/flutter-primer/","flutter/get-cli/","kanzi/alpha/","kanzi/loop-layout/","kanzi/multiple-projects/","kanzi/openGL/","linux/gcc/","linux/ubuntu-config/","other/blog-install/","other/git-deploy/","other/hexo-config/","other/unable-cmd/","other/vscode-config/","other/windows-interface-config/","qt/qt-android/","qt/qt-install/","qt/qgraphicsview/","qt/qt-packaging/","qt/qt-problem/","qt/qt-vs/","opengl/opengl-config/","opengl/vao_vbo/","qt/opengl-config/"];function toRandomPost(){
+    pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
+  };
