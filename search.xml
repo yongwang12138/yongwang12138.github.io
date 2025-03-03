@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>动态导入库</title>
+      <link href="/cplusplus/dynamic-import-lib/"/>
+      <url>/cplusplus/dynamic-import-lib/</url>
+      
+        <content type="html"><![CDATA[<p>在 Windows 系统里链接动态库时，编译阶段链接的是动态库的导入库（<code>.lib</code> 文件），而程序运行时依赖的是具体的动态链接库（<code>.dll</code> 文件）</p><h3 id="编译阶段：链接导入库"><a href="#编译阶段：链接导入库" class="headerlink" title="编译阶段：链接导入库"></a>编译阶段：链接导入库</h3><ul><li><strong>导入库的作用</strong>：导入库是一个相对较小的文件，它主要包含了动态链接库中导出函数和变量的符号信息，如函数名、参数类型、返回值类型等。在编译和链接过程中，链接器会读取导入库中的符号信息，并将这些信息嵌入到可执行文件中。这样，可执行文件在运行时就知道要从哪个动态链接库中加载哪些函数和变量。</li><li><strong>链接方式</strong>：在 Qt 的 <code>.pro</code> 文件或者其他编译配置中，使用 <code>-l</code> 和 <code>-L</code> 选项来指定要链接的导入库。</li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">win32: &#123;</span><br><span class="line">    LIBS += -L$$DESTDIR/ffmpeg/lib/ # 动态库路径</span><br><span class="line">    # 动态导入库 下列都是动态导入库，不是静态库</span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/avcodec.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/avdevice.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/avfilter.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/avformat.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/avutil.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/postproc.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/swresample.lib&quot;</span></span><br><span class="line">    LIBS += <span class="string">&quot;$$PWD/ffmpeg/lib/swscale.lib&quot;</span></span><br><span class="line">#win32: LIBS += -L$$PWD/ffmpeg/lib/ -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lpostproc -lswresample -lswscale</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>列表初始化</title>
       <link href="/cplusplus/list-init/"/>
       <url>/cplusplus/list-init/</url>
