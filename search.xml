@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>纯代码继承QWidget</title>
+      <link href="/qt/inherit-qwidget/"/>
+      <url>/qt/inherit-qwidget/</url>
+      
+        <content type="html"><![CDATA[<h1 id="自定义窗口类继承QWidget不显示"><a href="#自定义窗口类继承QWidget不显示" class="headerlink" title="自定义窗口类继承QWidget不显示"></a>自定义窗口类继承QWidget不显示</h1><p><strong>主要是因为QSS样式不生效</strong></p><p>QWidget仅仅支持background，background-clip和background-origin属性（其实和不支持qss也没差多少…）。如果你继承自QWidget自定义一个窗口，那么你需要重写 paintEvent事件，当然文档里已经给你写好了，直接粘贴进去就可以了。下面列一份代码段：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">CustomWidget::paintEvent</span><span class="params">(QPaintEvent *event)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    QStyleOption opt;</span><br><span class="line">    opt.<span class="built_in">init</span>(<span class="keyword">this</span>);</span><br><span class="line">    <span class="function">QPainter <span class="title">p</span><span class="params">(<span class="keyword">this</span>)</span></span>;</span><br><span class="line">    <span class="built_in">style</span>()-&gt;<span class="built_in">drawPrimitive</span>(QStyle::PE_Widget, &amp;opt, &amp;p, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Qt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Qt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>动态导入库</title>
       <link href="/cplusplus/dynamic-import-lib/"/>
       <url>/cplusplus/dynamic-import-lib/</url>
