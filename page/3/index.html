@@ -60,7 +60,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-03-11 18:07:26',
+  postUpdate: '2025-03-12 17:55:01',
   postMainColor: '',
 }</script><noscript><style type="text/css">
   #nav {
@@ -259,9 +259,9 @@ if (true) {
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/Ubuntu/">
-      <a href="/categories/Ubuntu/">
-        Ubuntu
+    <div class="catalog-list-item" id="/categories/kanzi/">
+      <a href="/categories/kanzi/">
+        kanzi
       </a>
     </div>
     
@@ -271,15 +271,15 @@ if (true) {
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/其他/">
-      <a href="/categories/其他/">
-        其他
+    <div class="catalog-list-item" id="/categories/Ubuntu/">
+      <a href="/categories/Ubuntu/">
+        Ubuntu
       </a>
     </div>
     
-    <div class="catalog-list-item" id="/categories/kanzi/">
-      <a href="/categories/kanzi/">
-        kanzi
+    <div class="catalog-list-item" id="/categories/其他/">
+      <a href="/categories/其他/">
+        其他
       </a>
     </div>
     
@@ -353,13 +353,17 @@ n的取值范围：0~3。编译器的优化选项的4个级别，-O0表示没有
 
 
 -std
-指定C方言，如:-std&#x3D;c99，gcc默认的方言是G ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/linux/ubuntu-config/')"><div class="post_cover left"><a href="/linux/ubuntu-config/" title="Ubuntu基本配置" style="display: flex;height: 100%;"><img class="post_bg" src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu基本配置" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/linux/ubuntu-config/" title="Ubuntu基本配置">未读</a></div><a class="article-title" href="/linux/ubuntu-config/" title="Ubuntu基本配置">Ubuntu基本配置</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; "></i><span class="article-meta-label">更新于</span><time datetime="2025-02-12T08:51:31.436Z" title="更新于 2025-02-12 16:51:31" time="2025-02-12 16:51:31">2025-02-12</time><time class="time_hidden" datetime="2024-06-06T01:41:46.000Z" title="发表于 2024-06-06 09:41:46" time="2024-06-06 09:41:46">2024-06-06</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Ubuntu/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Ubuntu</span></a></span></div><div class="content">1. 下载安装包1.1 安装在虚拟机中可以用迅雷来加速
+指定C方言，如:-std&#x3D;c99，gcc默认的方言是G ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/linux/ubuntu-config/')"><div class="post_cover left"><a href="/linux/ubuntu-config/" title="Ubuntu基本配置" style="display: flex;height: 100%;"><img class="post_bg" src="/img/ubuntu_config.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Ubuntu基本配置" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/linux/ubuntu-config/" title="Ubuntu基本配置">未读</a></div><a class="article-title" href="/linux/ubuntu-config/" title="Ubuntu基本配置">Ubuntu基本配置</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; "></i><span class="article-meta-label">更新于</span><time datetime="2025-03-12T09:54:47.970Z" title="更新于 2025-03-12 17:54:47" time="2025-03-12 17:54:47">2025-03-12</time><time class="time_hidden" datetime="2024-06-06T01:41:46.000Z" title="发表于 2024-06-06 09:41:46" time="2024-06-06 09:41:46">2024-06-06</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Ubuntu/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Ubuntu</span></a></span></div><div class="content">1. 下载安装包1.1 安装在虚拟机中可以用迅雷来加速
 下载Ubuntu桌面系统 | Ubuntu
 
 
-1.2 在windows中安装子系统2. 基本配置2.1 更新可用的软件包列表1sudo apt update
+1.2 在windows中安装子系统2. 安装步骤直接点下一步就好，不要设置中文。
 
-2.2 安装网络管理和调试的工具1sudo apt install net-tools
+2. 基本配置2.1 更新可用的软件包列表12sudo apt updatesudo apt upgrade
+
+2.2 安装vmtools1sudo apt install open-vm-tools open-vm-tools-desktop
+
+2.3 安装网络管理和调试的工具1sudo apt install net-tools
 
  net-tools 包中包含的主要工具：
 
@@ -390,13 +394,7 @@ mii-tool
 检测、配置和管理基于MII的以太网设备
 
 
-2.3 安装远程连接所需的基本配置1sudo apt-get install openssh-server g++ gdb gdbserver
-
-2.4 配置SSH远程连接2.4.1 生成密钥生成SSH密钥命令
-
-1ssh-keygen -t ed25519
-
-2.4.2  ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/kanzi/multiple-projects/')"><div class="post_cover left"><a href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目" style="display: flex;height: 100%;"><img class="post_bg" src="/img/QNXLoadsMultipleKanzi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Qnx系统同时启动多个Kanzi项目" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目">未读</a></div><a class="article-title" href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目">Qnx系统同时启动多个Kanzi项目</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; "></i><span class="article-meta-label">更新于</span><time datetime="2025-02-12T08:51:31.432Z" title="更新于 2025-02-12 16:51:31" time="2025-02-12 16:51:31">2025-02-12</time><time class="time_hidden" datetime="2024-05-30T11:58:20.000Z" title="发表于 2024-05-30 19:58:20" time="2024-05-30 19:58:20">2024-05-30</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/kanzi/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>kanzi</span></a></span></div><div class="content">在onConfigure函数中添加配置1234virtual void onConfigure(ApplicationProperties&amp; configuration) KZ_OVERRIDE&#123;    configuration.defaultWindowProperties.groupName = string(&quot;FirstApplicationWindowGroupName&quot;);&#125;
+2.4 安装远程连接所需的基本配置1sudo apt  ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/kanzi/multiple-projects/')"><div class="post_cover left"><a href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目" style="display: flex;height: 100%;"><img class="post_bg" src="/img/QNXLoadsMultipleKanzi.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Qnx系统同时启动多个Kanzi项目" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目">未读</a></div><a class="article-title" href="/kanzi/multiple-projects/" title="Qnx系统同时启动多个Kanzi项目">Qnx系统同时启动多个Kanzi项目</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; "></i><span class="article-meta-label">更新于</span><time datetime="2025-02-12T08:51:31.432Z" title="更新于 2025-02-12 16:51:31" time="2025-02-12 16:51:31">2025-02-12</time><time class="time_hidden" datetime="2024-05-30T11:58:20.000Z" title="发表于 2024-05-30 19:58:20" time="2024-05-30 19:58:20">2024-05-30</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/kanzi/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>kanzi</span></a></span></div><div class="content">在onConfigure函数中添加配置1234virtual void onConfigure(ApplicationProperties&amp; configuration) KZ_OVERRIDE&#123;    configuration.defaultWindowProperties.groupName = string(&quot;FirstApplicationWindowGroupName&quot;);&#125;
 
 </div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/kanzi/alpha/')"><div class="post_cover left"><a href="/kanzi/alpha/" title="Kanzi配置屏幕透明" style="display: flex;height: 100%;"><img class="post_bg" src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Kanzi配置屏幕透明" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><a class="unvisited-post" href="/kanzi/alpha/" title="Kanzi配置屏幕透明">未读</a></div><a class="article-title" href="/kanzi/alpha/" title="Kanzi配置屏幕透明">Kanzi配置屏幕透明</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-history" style="font-size: 15px; "></i><span class="article-meta-label">更新于</span><time datetime="2025-02-12T08:51:31.407Z" title="更新于 2025-02-12 16:51:31" time="2025-02-12 16:51:31">2025-02-12</time><time class="time_hidden" datetime="2024-05-30T08:38:35.000Z" title="发表于 2024-05-30 16:38:35" time="2024-05-30 16:38:35">2024-05-30</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/kanzi/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>kanzi</span></a></span></div><div class="content">1. Kanzi工程屏幕节点设置将属性 (Properties) 中将屏幕清除颜色 (Screen Clear Color) 属性设置为用于屏幕 (Screen) 节点以外的区域的颜色。当您设置屏幕清除颜色 (Screen Clear Color) 属性时，Kanzi 会使用您之前设置的颜色清除 屏幕 (Screen) 节点以外的屏幕，然后再渲染任何其他区域。
 
