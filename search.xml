@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Wireshark教程</title>
+      <link href="/other/wireshark/"/>
+      <url>/other/wireshark/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>纯代码继承QWidget</title>
       <link href="/qt/inherit-qwidget/"/>
       <url>/qt/inherit-qwidget/</url>
