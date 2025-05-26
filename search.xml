@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>诡异的BUG</title>
+      <link href="/other/strange-question/"/>
+      <url>/other/strange-question/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-库编译不过"><a href="#1-库编译不过" class="headerlink" title="1. 库编译不过"></a>1. 库编译不过</h1><p>检查库是32位还是64位，是否与编译一致。</p><h1 id="2-Debug不崩溃，Release崩溃"><a href="#2-Debug不崩溃，Release崩溃" class="headerlink" title="2. Debug不崩溃，Release崩溃"></a>2. Debug不崩溃，Release崩溃</h1><p>有函数没有返回值。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Wireshark教程</title>
       <link href="/other/wireshark/"/>
       <url>/other/wireshark/</url>
