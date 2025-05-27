@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Clion安装及配置</title>
+      <link href="/cplusplus/clion-install/"/>
+      <url>/cplusplus/clion-install/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-官网下载"><a href="#1-官网下载" class="headerlink" title="1. 官网下载"></a>1. 官网下载</h1><p><a href="https://www.jetbrains.com.cn/">JetBrains: 软件开发者和团队的必备工具</a></p><p><img src="/cplusplus/extern/nstall/image-20250527102130389.png" alt="image-20250527102130389"></p><h1 id="2-配置Qt环境"><a href="#2-配置Qt环境" class="headerlink" title="2. 配置Qt环境"></a>2. 配置Qt环境</h1><p><img src="/cplusplus/extern/nstall/image-20250527135227595.png" alt="image-20250527135227595"></p><div class="note blue flat"><p>说明: debug和release只需要配置一个即可。</p></div><p><img src="/cplusplus/extern/nstall/image-20250527135429419.png" alt="image-20250527135429419"></p><p><img src="/cplusplus/extern/nstall/image-20250527135947060.png" alt="image-20250527135947060"></p><p><img src="/cplusplus/extern/nstall/image-20250527140552673.png" alt="image-20250527140552673"></p><p>实参：<code>$FileName$ -o ui_$FileNameWithoutAllExtensions$.h</code></p><p><img src="/cplusplus/extern/nstall/image-20250527140842097.png" alt="image-20250527140842097"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>诡异的BUG</title>
       <link href="/other/strange-question/"/>
       <url>/other/strange-question/</url>
