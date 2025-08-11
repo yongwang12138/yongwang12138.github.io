@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>go-install</title>
+      <link href="/golang/go-install/"/>
+      <url>/golang/go-install/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-Go部署"><a href="#1-Go部署" class="headerlink" title="1. Go部署"></a>1. Go部署</h1><h2 id="1-1-git上拉取项目"><a href="#1-1-git上拉取项目" class="headerlink" title="1.1 git上拉取项目"></a>1.1 git上拉取项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@188.18.45.211:xc/licensemgr.git</span><br></pre></td></tr></table></figure><h2 id="1-2-构建适用于-Linux-系统的项目产物"><a href="#1-2-构建适用于-Linux-系统的项目产物" class="headerlink" title="1.2 构建适用于 Linux 系统的项目产物"></a>1.2 构建适用于 Linux 系统的项目产物</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build:lin</span><br></pre></td></tr></table></figure><h3 id="1-3-打包"><a href="#1-3-打包" class="headerlink" title="1.3 打包"></a>1.3 打包</h3><ul><li>将需要的config.yaml文件 前端包 start.sh stop.sh打包在一起。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> go </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/ffmpeg/options/"/>
+      <url>/ffmpeg/options/</url>
+      
+        <content type="html"><![CDATA[<p>FFmpeg 的参数层次结构与它的内部工作流程密切相关，不同参数对应不同的数据处理阶段。以下从底层到上层梳理各层次的功能及对应的关键参数，帮助你理解参数的作用范围：</p><h3 id="FFmpeg-数据处理层次结构（从低到高）"><a href="#FFmpeg-数据处理层次结构（从低到高）" class="headerlink" title="FFmpeg 数据处理层次结构（从低到高）"></a><strong>FFmpeg 数据处理层次结构（从低到高）</strong></h3><p>plaintext</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐</span><br><span class="line">│  网络/文件层    │  │  协议解析层     │  │  格式处理层     │  │  编解码层       │</span><br><span class="line">│ （I/O 层）      │  │ （Protocol）    │  │ （Format）      │  │ （Codec）       │</span><br><span class="line">└─────────────────┘  └─────────────────┘  └─────────────────┘  └─────────────────┘</span><br><span class="line">       ↓                    ↓                    ↓                    ↓</span><br><span class="line">  数据读取/接收        协议解析（RTSP/HTTP）   封装格式处理（MP4/TS）  音视频解码</span><br><span class="line">（字节流层面）        （URL 解析/握手）       （拆包为帧数据）      （帧数据解码）</span><br></pre></td></tr></table></figure><h3 id="各层次功能及核心参数"><a href="#各层次功能及核心参数" class="headerlink" title="各层次功能及核心参数"></a><strong>各层次功能及核心参数</strong></h3><h4 id="1-网络-文件层（I-O-层）"><a href="#1-网络-文件层（I-O-层）" class="headerlink" title="1. 网络 &#x2F; 文件层（I&#x2F;O 层）"></a>1. <strong>网络 &#x2F; 文件层（I&#x2F;O 层）</strong></h4><ul><li><p><strong>功能</strong>：负责从网络（UDP&#x2F;TCP）或本地文件读取原始字节流，是数据进入 FFmpeg 的第一道关口。</p></li><li><p>核心参数</p><p>：</p><ul><li><code>buffer_size</code>：设置网络接收缓冲区大小（仅网络场景），用于暂存刚收到的 UDP&#x2F;TCP 数据包。</li><li><code>avioflags=direct</code>：启用直接 I&#x2F;O 模式，减少 I&#x2F;O 层的缓冲延迟。</li><li><code>stimeout</code>：网络连接超时时间（仅网络场景），避免连接卡死。</li></ul></li></ul><h4 id="2-协议解析层（Protocol-Layer）"><a href="#2-协议解析层（Protocol-Layer）" class="headerlink" title="2. 协议解析层（Protocol Layer）"></a>2. <strong>协议解析层（Protocol Layer）</strong></h4><ul><li><p><strong>功能</strong>：解析上层协议（如 RTSP&#x2F;HTTP&#x2F;RTMP），处理 URL 解析、协议握手、数据分片等逻辑。</p></li><li><p>核心参数</p><p>：</p><ul><li><code>rtsp_transport=tcp/udp</code>：指定 RTSP 传输协议（TCP 可靠 &#x2F; UDP 低延迟）。</li><li><code>reconnect</code>&#x2F;<code>reconnect_delay_max</code>：网络中断后的自动重连配置（仅网络协议）。</li><li><code>user_agent</code>&#x2F;<code>headers</code>：HTTP 协议的请求头配置（如模拟浏览器请求）。</li></ul></li></ul><h4 id="3-格式处理层（Format-Layer）"><a href="#3-格式处理层（Format-Layer）" class="headerlink" title="3. 格式处理层（Format Layer）"></a>3. <strong>格式处理层（Format Layer）</strong></h4><ul><li><p><strong>功能</strong>：解析封装格式（如 MP4&#x2F;TS&#x2F;FLV），将字节流拆分为音视频帧（AVPacket），处理帧的时序和依赖关系。</p></li><li><p>核心参数</p><p>：</p><ul><li><code>fflags=nobuffer</code>：禁用格式层的输入缓冲，数据拆包后立即送入解码（降低延迟）。</li><li><code>reorder_queue_size</code>：设置网络包重排序队列大小（仅网络场景），用于纠正 UDP 乱序包。</li><li><code>drop_pkts_on_overflow</code>：缓冲区溢出时是否丢包（网络波动时的容错策略）。</li></ul></li></ul><h4 id="4-编解码层（Codec-Layer）"><a href="#4-编解码层（Codec-Layer）" class="headerlink" title="4. 编解码层（Codec Layer）"></a>4. <strong>编解码层（Codec Layer）</strong></h4><ul><li><p><strong>功能</strong>：对音视频帧（AVPacket）进行解码，生成原始像素数据（视频）或采样数据（音频）。</p></li><li><p>核心参数</p><p>：</p><ul><li><code>max_delay</code>：解码器允许的最大缓冲延迟，控制帧在解码器中的停留时间（平衡延迟与流畅性）。</li><li><code>threads</code>：解码线程数（影响解码效率，多线程适合本地文件，单线程适合低延迟网络流）。</li><li><code>err_detect=ignore_err</code>：解码器容错策略（忽略部分错误，避免解码中断）。</li></ul></li></ul><h3 id="参数与层次的对应关系表"><a href="#参数与层次的对应关系表" class="headerlink" title="参数与层次的对应关系表"></a><strong>参数与层次的对应关系表</strong></h3><table><thead><tr><th>常用参数</th><th>所属层次</th><th>作用场景</th><th>核心作用</th></tr></thead><tbody><tr><td><code>buffer_size</code></td><td>网络 &#x2F; 文件层</td><td>网络流（UDP）</td><td>增大网络接收缓冲区，减少丢包</td></tr><tr><td><code>avioflags=direct</code></td><td>网络 &#x2F; 文件层</td><td>低延迟场景</td><td>减少 I&#x2F;O 层缓冲，加速数据传递</td></tr><tr><td><code>rtsp_transport</code></td><td>协议解析层</td><td>RTSP 流</td><td>选择传输协议（TCP&#x2F;UDP）</td></tr><tr><td><code>reconnect</code></td><td>协议解析层</td><td>网络流</td><td>网络中断后自动重连</td></tr><tr><td><code>fflags=nobuffer</code></td><td>格式处理层</td><td>实时流（低延迟优先）</td><td>禁用格式层缓冲，帧拆包后立即解码</td></tr><tr><td><code>reorder_queue_size</code></td><td>格式处理层</td><td>UDP 流</td><td>配置乱序包重排序队列大小</td></tr><tr><td><code>max_delay</code></td><td>编解码层</td><td>所有场景</td><td>控制解码器最大缓冲延迟</td></tr></tbody></table><p>通过这个层次划分，可以清晰地理解：<strong>底层参数（如 <code>buffer_size</code>）影响数据接收的完整性，上层参数（如 <code>fflags=nobuffer</code>）影响处理延迟，编解码层参数（如 <code>max_delay</code>）影响最终的画面流畅度</strong>。在实际配置时，需根据场景（本地文件 &#x2F; 网络流）和需求（低延迟 &#x2F; 高稳定性），在不同层次针对性调整参数。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树莓派</title>
       <link href="/raspberrypi/raspberrypi/"/>
       <url>/raspberrypi/raspberrypi/</url>
