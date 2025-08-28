@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/ffmpeg/rtsp/"/>
+      <url>/ffmpeg/rtsp/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-RTSP、RTP、RTCP-的关系与分工"><a href="#1-RTSP、RTP、RTCP-的关系与分工" class="headerlink" title="1. RTSP、RTP、RTCP 的关系与分工"></a>1. RTSP、RTP、RTCP 的关系与分工</h3><p>三者是协作关系，分别负责<strong>控制、数据传输、质量监控</strong>，共同实现实时流的完整流程：</p><table><thead><tr><th>协议</th><th>核心作用</th><th>类比场景</th><th>传输载体</th></tr></thead><tbody><tr><td>RTSP</td><td>控制媒体流（建立连接、播放、暂停、关闭等）</td><td>类似 “遥控器”</td><td>通常用 TCP（可靠控制）</td></tr><tr><td>RTP</td><td>传输实际的音视频数据（封装媒体帧）</td><td>类似 “快递包裹”</td><td>通常用 UDP</td></tr><tr><td>RTCP</td><td>监控传输质量（统计丢包、延迟，同步时钟）</td><td>类似 “物流跟踪系统”</td><td>通常用 UDP</td></tr></tbody></table><h4 id="具体协作流程："><a href="#具体协作流程：" class="headerlink" title="具体协作流程："></a>具体协作流程：</h4><ol><li><strong>RTSP 负责 “控制会话”</strong>：<ul><li>客户端向服务器发送 RTSP 命令（如<code>OPTIONS</code>查询支持的操作、<code>DESCRIBE</code>获取流信息、<code>SETUP</code>协商传输方式、<code>PLAY</code>开始播放）；</li><li>服务器通过 RTSP 响应告知客户端：流的编码格式（如 H.264）、RTP 传输的端口和方式（UDP&#x2F;TCP）等。</li></ul></li><li><strong>RTP 负责 “传输数据”</strong>：<ul><li>服务器根据 RTSP 协商的参数，将编码后的音视频数据（如 H.264 帧）封装成 RTP 包（添加时间戳、序列号、负载类型等）；</li><li>通过 UDP 将 RTP 包发送到客户端指定的端口。</li></ul></li><li><strong>RTCP 负责 “质量监控与同步”</strong>：<ul><li>客户端和服务器定期发送 RTCP 包，包含：丢包率、网络延迟、时钟同步信息等；</li><li>服务器可根据 RTCP 反馈调整发送速率（如网络差时降低码率）；</li><li>客户端可根据 RTCP 的时钟同步信息，解决音视频播放不同步问题。</li></ul></li></ol><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul><li><strong>UDP 是 “运输工具”</strong>：承载 RTP 和 RTCP 的数据传输（偶尔也承载 RTSP，但 RTSP 更常用 TCP）；</li><li><strong>RTSP 是 “指挥官”</strong>：负责建立和控制整个流媒体会话；</li><li><strong>RTP 是 “数据载体”</strong>：专门封装并传输音视频数据；</li><li><strong>RTCP 是 “监督员”</strong>：监控传输质量并辅助同步，保障播放体验。</li></ul><p>三者分工明确，共同支撑了实时流媒体（如监控摄像头、视频会议）的高效传输。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go-install</title>
       <link href="/golang/go-install/"/>
       <url>/golang/go-install/</url>
